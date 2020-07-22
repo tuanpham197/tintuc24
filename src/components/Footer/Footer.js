@@ -3,12 +3,13 @@ import styles from './style.scss'
 import { Layout, Col, Row } from 'antd';
 const style = { padding: '0 15px 0 0' };
 import {MailOutlined,PhoneOutlined ,RightOutlined} from '@ant-design/icons';
+const style2 = {padding : '0 15px 0 15px'};
 
 class Footer extends Component {
     render() {
         return (
-            <Layout className={styles.footer}>
-                <Row className={styles.footer__align}>
+            <Layout className={styles.footer} >
+                <Row className={styles.footer__align} style={style2}>
                     <Col md={6} lg={6} xl={6} style={style}>
                         <div>
                             <div className={styles.tile}>

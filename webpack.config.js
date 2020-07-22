@@ -1,6 +1,16 @@
 const path = require('path') // lấy đường dẫn tuyệt đối của thư mục
-var HtmlWebPackPlugin = require('html-webpack-plugin');
-
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const version = +new Date();
+const plugins = [
+    new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // both options are optional
+        chunkFilename: '[name].chunk.css',
+        filename: `bundle-${version}.css`,
+        ignoreOrder: true,
+    }),
+];
 const config = {
   entry: './src/index.js',
   output: {
@@ -28,7 +38,16 @@ const config = {
 		},
 		{
 			test: /\.css$/i,
-			use: ['style-loader', 'css-loader'],
+			use: [
+				MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            // modules: false,
+                            // localIdentName: '[path]__[local]--[hash:base64:6]'
+                        },
+                    },
+			],
         },
         {
             test: /\.scss$/,
@@ -89,7 +108,7 @@ const config = {
 	devServer: {
 		historyApiFallback: true,
 	},
-	plugins: [
+	plugins: [...plugins,
 		new HtmlWebPackPlugin({
 			template: "./public/index.html",
 			filename: "./index.html"
