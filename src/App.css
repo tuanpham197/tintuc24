@@ -1,0 +1,12 @@
+.wrapper{
+  max-width: 1170px;
+  margin:0px auto;
+}
+.header{
+  height: 62px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.ant-input-search{
+  width: auto !important;
+}
