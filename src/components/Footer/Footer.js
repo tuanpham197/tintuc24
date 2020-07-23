@@ -3,7 +3,7 @@ import styles from './style.scss'
 import { Layout, Col, Row } from 'antd';
 const style = { padding: '0 15px 0 0' };
 import {MailOutlined,PhoneOutlined ,RightOutlined} from '@ant-design/icons';
-const style2 = {padding : '0 15px 0 15px'};
+const style2 = {padding : '15px 15px 0 15px'};
 
 class Footer extends Component {
     render() {

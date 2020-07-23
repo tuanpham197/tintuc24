@@ -1,3 +1,11 @@
+@mixin link-text {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #000000;
+    font-size: 17px;
+    line-height: 17px;
+    text-transform: uppercase;
+}
 .header{
     height: 62px;
     display: flex;
@@ -21,12 +29,7 @@
         display: inline-block;
         margin-right: 28px;
         a{
-            font-family: 'Roboto', sans-serif;
-            text-decoration: none;
-            color: #000000;
-            font-size: 17px;
-            line-height: 17px;
-            text-transform: uppercase;
+            @include link-text;
         }
     }
     li:last-child{
@@ -62,6 +65,16 @@
 
     transition: transform linear 0.3s, opacity linear 0.3s;
     padding: 15px;
+
+    ul{
+        li{
+            list-style: none;
+            padding:10px 0;
+            a{
+                @include link-text;
+            }
+        }
+    }
 }
 #checkbox_nav{
     display:none;
@@ -76,18 +89,24 @@ input#checkbox_nav:checked ~ .menu_mobile{
     display:none;
 }
 @media only screen and (max-width:1200px){
-    .logo{
-        font-size: 18;
+    h2.logo{    
+        font-size: 18px;           
     }
     .menu{
         li{
-            margin-right: 20px;
+            margin-right: 17px;
+            a{
+                font-size: 16px;
+            }
         }
     }
 }
 @media only screen and (max-width:992px){
     .menu,.search{
         display:none;
+    }
+    h2.logo{    
+        font-size: 20px;           
     }
     .btn_menu{
         display:block;

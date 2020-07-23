@@ -5,10 +5,11 @@ const style = { padding: '0 15px 0 0' };
 
 class PostInCategory extends Component {
     render() {
+        let {title} = this.props;
         return (
             <Layout className={styles.top}>
                 <div className={styles.category}>
-                    <h5>Xã hội</h5>
+                    <h5>{title}</h5>
                 </div>
                 <div className={styles.list_post}>
                     <Row>
@@ -17,7 +18,7 @@ class PostInCategory extends Component {
                                 <h4>Việt Nam mong muốn sớm ký hiệp định thương mại với EU</h4>
                                 <div className={styles.main_post__content}>
                                     <div className={styles.main_post__content_img}>
-                                        <img src="assets/image/image-post-category.png" />
+                                        <img src="src/assets/image/image-post-category.png" />
                                     </div>
                                     <p>UBND TP Hồ Chí Minh vừa đồng ý cho một công ty của Nhật Bản hợp tác với Công ty TNHH một thành viên Môi trường đô thị thành phố (Citenco) triển khai Mô hình thử nghiệm nhà máy...</p>
                                 </div>
@@ -26,13 +27,13 @@ class PostInCategory extends Component {
                         <Col xs={24} sm={24} md={24} lg={9} xl={9} span={9} className={styles.mobie_respon}>
                             <div className={styles.post_category}>
                                 <a className={styles.post_relate}>
-                                    <img src="assets/image/post-relate.png" />
+                                    <img src="src/assets/image/post-relate.png" />
                                     <h5>Năng lượng Mặt trời: Những ý tưởng sáng tạo và ngộ nghĩnh</h5>
                                 </a>
                             </div>
                             <div className={styles.post_category}>
                                 <a className={styles.post_relate}>
-                                    <img src="assets/image/post-relate.png" />
+                                    <img src="src/assets/image/post-relate.png" />
                                     <h5>Năng lượng Mặt trời: Những ý tưởng sáng tạo và ngộ nghĩnh</h5>
                                 </a>
                             </div>

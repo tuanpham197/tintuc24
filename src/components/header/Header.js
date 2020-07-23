@@ -49,23 +49,49 @@ class Header extends Component {
                         style={{ width: "auto" }}
                         className={styles.search}
                     />
-                    <label  for={styles.checkbox_nav} style={{fontSize:18}} className={styles.btn_menu}>
+                    <label  htmlFor={styles.checkbox_nav} style={{fontSize:18}} className={styles.btn_menu}>
                         <MenuOutlined />
                     </label>
                 </Col>
                
                 <input type="checkbox" id={styles.checkbox_nav} />
 
-                <div className={styles.overlay}></div>
+                <label className={styles.overlay} htmlFor={styles.checkbox_nav}></label>
                 <div className={styles.menu_mobile}>
                     <div className={styles.menu_mobile__btnClose}>
-                        <label  for={styles.checkbox_nav}>
+                        <label  htmlFor={styles.checkbox_nav}>
                             <CloseOutlined style={{fontSize:18}} />
                         </label>
                     </div>
                     <ul>
-                        <li>Trang chủ</li>
-                        <li>Xã hội</li>
+                        <li>
+                            <Search
+                                placeholder="Tìm kiếm "
+                                onSearch={value => console.log(value)}
+                                style={{ width: "auto" }}
+                            />
+                        </li>
+                        <li>
+                            <a>Trang chủ</a>
+                        </li>
+                        <li>
+                            <a href="#s">Sự kiện</a>
+                        </li>
+                        <li>
+                            <a href="#s">Xã hội</a>
+                        </li>
+                        <li>
+                            <a href="#s">Thế giới</a>
+                        </li>
+                        <li>
+                            <a href="#s">Giáo dục</a>
+                        </li>
+                        <li>
+                            <a href="#s">Giải trí</a>
+                        </li>
+                        <li>
+                            <a href="#s">Nhịp sống trẻ</a>
+                        </li>
                     </ul>
                 </div>
           </Row>

@@ -13,7 +13,7 @@ function App() {
         <Header></Header>
         <Main></Main>
       </Row>
-      <Footer />
+      <Footer style={{paddingTop:30}} />
     </Layout>
     
   );

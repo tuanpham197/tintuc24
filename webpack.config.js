@@ -60,7 +60,7 @@ const config = {
                     loader: 'css-loader', // translates CSS into CommonJS
                     options : {
 						modules : {
-							// localIdentName: '[local]--[hash:base64:7]'
+							 localIdentName: '[local]--[hash:base64:7]'
 						},
 						sourceMap : true
 						

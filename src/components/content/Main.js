@@ -13,10 +13,10 @@ class Main extends Component {
                <Row>
                    <Col xs={24} sm={24} md={17} lg={16} xl={16} style={style}>
                        <NewPost></NewPost>
-                       <PostInCategory></PostInCategory>
-                       <PostInCategory></PostInCategory>
-                       <PostInCategory></PostInCategory>
-                       <PostInCategory></PostInCategory>
+                       <PostInCategory title={"Xã hội"}></PostInCategory>
+                       <PostInCategory title={"Thể thao"}></PostInCategory>
+                       <PostInCategory title={"Thế giới"}></PostInCategory>
+                       <PostInCategory title={"Giải trí"}></PostInCategory>
                    </Col>
                     <Col xs={0} sm={0} md={0} lg={2} xl={2}></Col>
                    <Col xs={24} sm={24} md={7} lg={6} xl={6} style={style}>
