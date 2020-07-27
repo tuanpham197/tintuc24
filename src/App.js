@@ -5,6 +5,7 @@ import { Layout, Row } from 'antd';
 import style from './style.scss';
 import Main from './components/content/Main';
 import Footer from './components/Footer/Footer';
+import PostContainer from './containers/NewPostContainer';
 
 function App() {
   return (

@@ -4,7 +4,24 @@ import styles  from './NewPost.scss'
 const style = { padding: '0 0 0 15px' };
 
 class NewPost extends Component {
+    showNewPostRelate = (posts)=>{
+        let dl = posts.map((ele,index)=>{
+            return <div className={styles.relate_post} key={index}>
+                        <a href="#" >
+                            <div className={styles.relate_post__content}>   
+                                <img src={`src/assets/image/${ele.thumb}`}/>
+                                <h4>{ele.title}</h4>
+                            </div>
+                        </a>
+                    </div>;
+        });
+        return dl;
+    }
     render() {
+        var {children} = this.props;
+        var posts = children.filter(ele=>{
+            return ele._id != children[0]._id;
+        });
         return (
             <Layout>
                 <Row>
@@ -12,54 +29,15 @@ class NewPost extends Component {
                         <div className={styles.new_post} >
                             <a href="#">
                                 <div>
-                                    <img src="src/assets/image/newpost.png" />
+                                    <img src={`src/assets/image/${children[0].thumb}`} />
                                 </div>
-                                <h3>Công trình xanh cho nhà ở đô thị: Phải hướng đến phát triển bền vững</h3>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                                <h3>{children[0].title}</h3>
+                                <p>{children[0].content}</p>
                             </a>
                         </div>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={9} xl={9} style={style} className={styles.post_relate_respon}>
-                        <div className={styles.relate_post}>
-                            <a href="#" >
-                                <div className={styles.relate_post__content}>
-                                    <img src="src/assets/image/image-relate-post.png"/>
-                                    <h4>Tranh cãi gay gắt về chiến lược bỏ C02 của Đức</h4>
-                                </div>
-                            </a>
-                        </div>
-                        <div className={styles.relate_post}>
-                            <a href="#" >
-                                <div className={styles.relate_post__content}>
-                                    <img src="src/assets/image/image-relate-post2.png"/>
-                                    <h4>Tranh cãi gay gắt về chiến lược bỏ C02 của Đức</h4>
-                                </div>
-                            </a>
-                        </div>
-                        <div className={styles.relate_post}>
-                            <a href="#" >
-                                <div className={styles.relate_post__content}>
-                                    <img src="src/assets/image/image-relate-post3.png"/>
-                                    <h4>Tranh cãi gay gắt về chiến lược bỏ C02 của Đức</h4>
-                                </div>
-                            </a>
-                        </div>
-                        <div className={styles.relate_post}>
-                            <a href="#" >
-                                <div className={styles.relate_post__content}>
-                                    <img src="src/assets/image/image-relate-post.png"/>
-                                    <h4>Tranh cãi gay gắt về chiến lược bỏ C02 của Đức</h4>
-                                </div>
-                            </a>
-                        </div>
-                        <div className={styles.relate_post}>
-                            <a href="#" >
-                                <div className={styles.relate_post__content}>
-                                    <img src="src/assets/image/image-relate-post2.png"/>
-                                    <h4>Tranh cãi gay gắt về chiến lược bỏ C02 của Đức</h4>
-                                </div>
-                            </a>
-                        </div>
+                        {this.showNewPostRelate(posts)}
                     </Col>
                 </Row>
             </Layout>

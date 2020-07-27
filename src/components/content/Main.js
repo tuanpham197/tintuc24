@@ -4,6 +4,7 @@ import styles  from './main.scss';
 import NewPost from './NewPosts/NewPost';
 import PostInCategory from './PostInCategory/PostInCategory';
 import SideBar from '../SideBar/SideBar';
+import NewPostContainer from '../../containers/NewPostContainer';
 const style = { padding: '0 15px 0 15px' };
 
 class Main extends Component {
@@ -12,7 +13,7 @@ class Main extends Component {
            <Layout className={styles.main}>
                <Row>
                    <Col xs={24} sm={24} md={17} lg={16} xl={16} style={style}>
-                       <NewPost></NewPost>
+                       <NewPostContainer></NewPostContainer>
                        <PostInCategory title={"Xã hội"}></PostInCategory>
                        <PostInCategory title={"Thể thao"}></PostInCategory>
                        <PostInCategory title={"Thế giới"}></PostInCategory>
