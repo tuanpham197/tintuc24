@@ -6,18 +6,46 @@ import PostInCategory from './PostInCategory/PostInCategory';
 import SideBar from '../SideBar/SideBar';
 import NewPostContainer from '../../containers/NewPostContainer';
 const style = { padding: '0 15px 0 15px' };
+import {connect} from 'react-redux';
+import axios from 'axios';
 
 class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            posts : []
+        }
+    }
+    async componentDidMount(){
+        var res = await axios.get("http://localhost:3000/post/all");
+        if(res){
+            this.setState({
+                posts : res.data.data
+            })
+        }
+    }
+    showPostInCategory =  (cats,posts)=>{
+        if(posts){
+            return posts.map((ele,index)=>{
+                let cat = cats.find(e=>e._id === ele._id);
+                return <PostInCategory 
+                            title= {cat.title}
+                            key={index}
+                            items = {ele.items}
+                />
+            })
+        }
+    }
     render() {
+        var {cats} = this.props;
+        var {posts} = this.state;
+        console.log(this.state,"12");
         return (
            <Layout className={styles.main}>
                <Row>
                    <Col xs={24} sm={24} md={17} lg={16} xl={16} style={style}>
                        <NewPostContainer></NewPostContainer>
-                       <PostInCategory title={"Xã hội"}></PostInCategory>
-                       <PostInCategory title={"Thể thao"}></PostInCategory>
-                       <PostInCategory title={"Thế giới"}></PostInCategory>
-                       <PostInCategory title={"Giải trí"}></PostInCategory>
+                       {this.showPostInCategory(cats,posts)}
                    </Col>
                     <Col xs={0} sm={0} md={0} lg={2} xl={2}></Col>
                    <Col xs={24} sm={24} md={7} lg={6} xl={6} style={style}>
@@ -28,5 +56,9 @@ class Main extends Component {
         );
     }
 }
-
-export default Main;
+const mapStateToProps = state =>{
+    return {
+        cats : state.category
+    }
+}
+export default connect(mapStateToProps,null) (Main);

@@ -5,7 +5,8 @@ const style = { padding: '0 0 0 15px' };
 
 class NewPost extends Component {
     showNewPostRelate = (posts)=>{
-        let dl = posts.map((ele,index)=>{
+        var arrPost = posts.slice(0,5);
+        let dl = arrPost.map((ele,index)=>{
             return <div className={styles.relate_post} key={index}>
                         <a href="#" >
                             <div className={styles.relate_post__content}>   

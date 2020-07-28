@@ -48,8 +48,11 @@ var initialState = [
 ];
 
 const post = (state = initialState,action)=>{
-    switch(action.types){
+    switch(action.type){
         case types.GET_LIST_POST: 
+            return [...state];
+        case types.FETCH_DATA_POST: 
+            state = action.posts;
             return [...state];
         default : 
             return [...state];
