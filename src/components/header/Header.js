@@ -5,15 +5,16 @@ import { Row, Col ,Input} from 'antd';
 const { Search } = Input;
 const style = { padding: '0 15px 0 15px' };
 import {CloseOutlined,MenuFoldOutlined,MenuOutlined} from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
     render() {
         return (
             <Row className={styles.header} style={style}>
                 <Col xs={12} sm={12} md={3} lg={3} xl={4}>
-                    <a href="#">
+                    <Link to="/">
                         <h2 className={styles.logo}>TINTUC24s</h2>
-                    </a>
+                    </Link>
                 </Col>
                 <Col xs={9} sm={9} md={0} lg={0} xl={0}>
                 </Col>

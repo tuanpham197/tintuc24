@@ -5,15 +5,15 @@ var initialState = {
 }
 
 const load = (state = initialState,action)=>{
-    switch(action.types){
+    switch(action.type){
         case types.SHOW_LOADING: 
             state.loading = true;
-            return [...state];
+            return {...state};
         case types.HIDE_LOADING: 
             state.loading = false;
-            return [...state];
+            return {...state};
         default : 
-            return [...state];
+            return {...state};
     }
 }
 export default load;

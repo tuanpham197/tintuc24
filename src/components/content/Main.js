@@ -17,7 +17,7 @@ class Main extends Component {
         }
     }
     async componentDidMount(){
-        var res = await axios.get("http://localhost:3000/post/all");
+        var res = await axios.get("https://protected-beyond-88939.herokuapp.com/post/all");
         if(res){
             this.setState({
                 posts : res.data.data
@@ -39,7 +39,7 @@ class Main extends Component {
     render() {
         var {cats} = this.props;
         var {posts} = this.state;
-        console.log(this.state,"12");
+
         return (
            <Layout className={styles.main}>
                <Row>
