@@ -1,6 +1,7 @@
 // POST
-export  const GET_LIST_POST = 'GET_LIST_POST';
-export  const FETCH_DATA_POST = 'FETCH_DATA_POST';
+export const GET_LIST_POST = 'GET_LIST_POST';
+export const FETCH_DATA_POST = 'FETCH_DATA_POST';
+export const GET_DETAIL_POST = 'GET_DETAIL_POST';
 
 
 

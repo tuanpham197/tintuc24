@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import post from './post'
+import posts from './post'
 import category from './category';
 import load from './loading';
 
 const myReducers = combineReducers({
-    post,
+    posts,
     category,
     load
 });

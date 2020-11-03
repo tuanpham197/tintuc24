@@ -7,7 +7,7 @@ class SideBar extends Component {
         return (
             <Layout>
                 <div className={styles.sidebar_ads}>
-                    <img src="src/assets/image/image-post-category.png"/>
+                    <img src="../src/assets/image/image-post-category.png"/>
                 </div>
                 <div className={styles.post_popular}>
                     <div className={styles.post_popular__title}>
@@ -16,31 +16,31 @@ class SideBar extends Component {
                     <div className={styles.list_post}>
                         <div className={styles.list_post__item}>
                             <a>
-                                <img src="src/assets/image/image-relate-post.png" />
+                                <img src="../src/assets/image/image-relate-post.png" />
                                 <h4>Ngân hàng có kế hoạch tuyển hàng nghìn nhân sự</h4>
                             </a>
                         </div>
                         <div className={styles.list_post__item}>
                             <a>
-                                <img src="src/assets/image/image-relate-post2.png" />
+                                <img src="../src/assets/image/image-relate-post2.png" />
                                 <h4>Ngân hàng có kế hoạch tuyển hàng nghìn nhân sự</h4>
                             </a>
                         </div>
                         <div className={styles.list_post__item}>
                             <a>
-                                <img src="src/assets/image/image-relate-post3.png" />
+                                <img src="../src/assets/image/image-relate-post3.png" />
                                 <h4>Ngân hàng có kế hoạch tuyển hàng nghìn nhân sự</h4>
                             </a>
                         </div>
                         <div className={styles.list_post__item}>
                             <a>
-                                <img src="src/assets/image/image-relate-post2.png" />
+                                <img src="../src/assets/image/image-relate-post2.png" />
                                 <h4>Ngân hàng có kế hoạch tuyển hàng nghìn nhân sự</h4>
                             </a>
                         </div>
                         <div className={styles.list_post__item}>
                             <a>
-                                <img src="src/assets/image/image-relate-post.png" />
+                                <img src="../src/assets/image/image-relate-post.png" />
                                 <h4>Ngân hàng có kế hoạch tuyển hàng nghìn nhân sự</h4>
                             </a>
                         </div>

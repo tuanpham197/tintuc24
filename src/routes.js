@@ -9,9 +9,9 @@ const routes = [
         main : ()=> <Main />
     },
     {
-        path : "/post",
+        path : "/post/:id",
         exact : false,
-        main : ()=> <PostDetail></PostDetail>
+        main : ()=> <PostDetail />
     },
 ];
 export default routes;

@@ -7,15 +7,15 @@ import {showLoading,hideLoading} from '../actions/index';
 
 function* fetchCategory(){
 
-    var res = yield axios.get('https://protected-beyond-88939.herokuapp.com/category/')
+    var res = yield axios.get('http://localhost:3000/category/')
     if(res)
         yield put({type: types.FETCH_DATA_CAT,categorys:res.data.data});
- 
+    
 }
 function* fetchPost(){
-
-    var res = yield axios.get('https://protected-beyond-88939.herokuapp.com/post/')
+    var res = yield axios.get('http://localhost:3000/post/')
     if(res){
+        console.log("saga ");
         yield put({type: types.FETCH_DATA_POST, posts:res.data.data});
     }
 }

@@ -6,7 +6,11 @@ export const getListPost = () =>{
         type : types.GET_LIST_POST,
     }
 }
-
+export const getDetailPost = () =>{
+    return {
+        type : types.GET_DETAIL_POST,
+    }
+}
 export const showLoading = () =>{
     return {
         type : types.SHOW_LOADING

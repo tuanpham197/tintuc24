@@ -19,6 +19,9 @@ class NewPost extends Component {
         });
         return dl;
     }
+    componentDidMount(){
+        console.log(this.props, " data 1");
+    }
     render() {
         var {children} = this.props;
         var posts = children.filter(ele=>{
